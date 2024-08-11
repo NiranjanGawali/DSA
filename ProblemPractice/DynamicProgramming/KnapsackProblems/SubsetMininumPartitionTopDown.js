@@ -61,9 +61,17 @@ function main(arr) {
 
   /* 
   So  the final formula becomes 
-  s1 = arrSum - s1
-  arrSum - s1 (-s1) = diff
-  arrSum - 2s1 = diff
+
+  s1 - s2 = diff
+
+  s1 + s2 = arrSum
+  s2 = arrSum - s1
+
+  s1 - (arrSum - s1) = diff
+
+  2s1 = diff + arrSum
+
+  diff = arrSum - 2*s1
   */
 
   let minimumSubsetDiff = arrSum - 2 * maxNum;
