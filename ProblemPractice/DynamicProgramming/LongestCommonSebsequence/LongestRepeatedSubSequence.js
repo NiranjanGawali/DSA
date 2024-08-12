@@ -47,13 +47,7 @@ function getLongestUniqueCommonSubSequence(str1, m, str2, n) {
 }
 
 function findLongestRepeatedSubSequence(str) {
-  let anotherStr = str;
-  return getLongestUniqueCommonSubSequence(
-    str,
-    str.length,
-    anotherStr,
-    anotherStr.length
-  );
+  return getLongestUniqueCommonSubSequence(str, str.length, str, str.length);
 }
 
 // let str = 'aabb'; // expected answer : ab
