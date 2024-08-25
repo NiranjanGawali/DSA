@@ -19,15 +19,17 @@ Input: s = "a", t = "aa"
 Output: ""
 Explanation: Both 'a's from t must be included in the window.
 Since the largest window of s only has one 'a', return empty string.
+
+https://leetcode.com/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150
 */
 
 function findMinimumWindowSubstring(inputString, windowString) {
-  //   let answer = 'adfasdfasdfasdfasfasdfasdfasdfasdfasdfsadf';
   let end = 0;
   let start = 0;
   let windowMap = {};
   let count = 0;
   let minLength = Number.MAX_SAFE_INTEGER;
+  let minWindowStart = 0;
 
   // Add the window string data to the map
   for (const windowWord of windowString) {

@@ -19,9 +19,9 @@ Time complexity is O(n) and space complexity is O(1)
 */
 
 function sortColors(nums) {
-  let low = 0;
-  let mid = 0;
-  let high = nums.length - 1;
+  let low = 0,
+    mid = 0,
+    high = nums.length - 1;
 
   while (mid <= high) {
     if (nums[mid] === 0) {
@@ -35,15 +35,8 @@ function sortColors(nums) {
       high--;
     }
   }
-  return nums;
 }
 
-// let nums = [2, 0, 2, 1, 1, 0];
 let nums = [2, 0, 1];
-let result = sortColors(nums);
-console.log('Result : ', result); // Output: [0, 0, 1, 1, 2, 2]
-
-// [2,0,1] - low = 0, mid = 0, high = 2
-// [1,0,2] - low = 0, mid = 0, high = 1
-// [1,0,2] - low = 0, mid = 1, high = 1
-// [0,1,2] - low = 1, mid = 2, high = 1 , since mid is less than and equal to high, break from the loop
+sortColors(nums);
+console.log('Results : ', nums);

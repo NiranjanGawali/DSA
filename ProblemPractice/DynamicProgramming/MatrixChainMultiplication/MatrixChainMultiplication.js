@@ -42,11 +42,27 @@ function findMinimumMCMValue(arr, i, j, memo = {}) {
 
   let minVal = Number.MAX_SAFE_INTEGER;
 
+  // by adding memoization in the for loop additional level memoization is added here.
+
   for (let k = i; k <= j - 1; k++) {
-    let op =
-      findMinimumMCMValue(arr, i, k, memo) +
-      findMinimumMCMValue(arr, k + 1, j, memo) +
-      arr[i - 1] * arr[k] * arr[j];
+    let leftKey = `${i}:${k}`;
+    let rightKey = `${k + 1}:${j}`;
+
+    let left, right;
+
+    if (leftKey in memo) {
+      left = memo[leftKey];
+    } else {
+      left = findMinimumMCMValue(arr, i, k, memo);
+    }
+
+    if (rightKey in memo) {
+      right = memo[rightKey];
+    } else {
+      right = findMinimumMCMValue(arr, k + 1, j, memo);
+    }
+
+    let op = left + right + arr[i - 1] * arr[k] * arr[j];
 
     minVal = Math.min(minVal, op);
   }

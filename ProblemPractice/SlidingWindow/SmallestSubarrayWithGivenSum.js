@@ -29,10 +29,13 @@ function minSubArrayLen(target, arr) {
   while (end < arr.length) {
     tempSum += arr[end];
 
-    while (tempSum >= target) {
-      minSubArrayLen = Math.min(minSubArrayLen, end - start + 1);
+    while (tempSum > target) {
       tempSum -= arr[start];
       start++;
+    }
+
+    if (tempSum === target) {
+      minSubArrayLen = Math.min(minSubArrayLen, end - start + 1);
     }
 
     end++;
@@ -40,5 +43,14 @@ function minSubArrayLen(target, arr) {
   return minSubArrayLen === Number.MAX_VALUE ? 0 : minSubArrayLen;
 }
 
-let result = minSubArrayLen(7, [2, 3, 1, 2, 4, 3]);
+let target = 7,
+  nums = [2, 3, 1, 2, 4, 3];
+
+// let target = 4,
+//   nums = [1, 4, 4];
+
+// let target = 11,
+//   nums = [1, 1, 1, 1, 1, 1, 1, 1];
+
+let result = minSubArrayLen(target, nums);
 console.log('Result : ', result);

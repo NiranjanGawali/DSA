@@ -70,7 +70,7 @@ console.log(result2);
 // The algorithm runs in constant space O(1).
 
 /**************************************/
-/************* HASH TABLE SOLUTION ******************/
+/************* Object SOLUTION ******************/
 /**************************************/
 
 // function pairWithTargetSum(numsArr, target) {
