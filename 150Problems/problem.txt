@@ -1,1 +1,4 @@
 https://leetcode.com/studyplan/top-interview-150/
+
+
+1. Need to go though matrix solved solutions once again with great concentration
