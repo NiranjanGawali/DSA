@@ -25,7 +25,7 @@ function findCountOfSubsets(input, n, sum) {
 
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= sum; j++) {
-      if (input[i - 1] > sum) {
+      if (input[i - 1] > j) {
         dp[i][j] = dp[i - 1][j];
       } else {
         let includeItem = dp[i - 1][j - input[i - 1]];

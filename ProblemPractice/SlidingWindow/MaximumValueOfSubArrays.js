@@ -76,6 +76,6 @@ function findMaximumValueOfSubArray(arr, arraySize, window) {
 // Example usage:
 let arr = [1, 3, -1, -3, 5, 3, 6, 7];
 let arraySize = arr.length;
-let window = 8;
+let window = 3;
 let result = findMaximumValueOfSubArray(arr, arraySize, window);
 console.log('Result : ', result); // Output: [3, 3, 5, 5, 6, 7]

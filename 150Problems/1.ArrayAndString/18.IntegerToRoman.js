@@ -83,3 +83,8 @@ let input = '3749';
 let result = integerToRoman(input);
 
 console.log(result);
+
+/*
+Time Complexity: O(n) (linear in the length of the input string)
+Space Complexity: O(1) (constant space)
+*/

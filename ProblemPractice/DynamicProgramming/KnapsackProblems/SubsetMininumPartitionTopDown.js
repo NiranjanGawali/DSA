@@ -63,10 +63,9 @@ function main(arr) {
   So  the final formula becomes 
 
   s1 - s2 = diff
-
   s1 + s2 = arrSum
-  s2 = arrSum - s1
 
+  s2 = arrSum - s1
   s1 - (arrSum - s1) = diff
 
   2s1 = diff + arrSum

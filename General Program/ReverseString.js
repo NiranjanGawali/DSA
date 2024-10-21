@@ -21,8 +21,8 @@ Reverse the string with recursion
 */
 
 function reverseString(str) {
-  if (str === 0) return '';
-  else return reverseString(str.substr(1)) + str.charAt(0);
+  if (str === '') return '';
+  else return reverseString(str.substr(1)) + str.charAt(0); // Recursively call for the rest of the string
 }
 
 console.log(`The reversed string : ${reverseString('hello')}`);

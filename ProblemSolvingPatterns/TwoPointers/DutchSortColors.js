@@ -38,8 +38,8 @@ function sortColors(nums) {
   return nums;
 }
 
-// let nums = [2, 0, 2, 1, 1, 0];
-let nums = [2, 0, 1];
+let nums = [2, 0, 2, 1, 1, 0];
+// let nums = [2, 0, 1];
 let result = sortColors(nums);
 console.log('Result : ', result); // Output: [0, 0, 1, 1, 2, 2]
 

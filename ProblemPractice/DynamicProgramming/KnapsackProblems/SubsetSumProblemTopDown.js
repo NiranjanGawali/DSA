@@ -44,3 +44,10 @@ let n = input.length;
 
 let result = isSubsetSumPresent(input, n, sum);
 console.log('Result : ', result);
+
+/*
+
+Time Complexity: 𝑂(n×sum)  because we are solving each subproblem only once using memoization.
+Space Complexity: 𝑂(n×sum) due to the memoization table and recursion stack.
+
+*/

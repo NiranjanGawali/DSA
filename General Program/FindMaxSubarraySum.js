@@ -16,7 +16,7 @@ getMaxSubSum([1, 2, 3]) == 6 (take all)
 */
 
 // Below is the coding solution via brute force way
-/*
+
 function maxSubarray(arr) {
   let maxSum = 0;
   let partialSum = 0;
@@ -30,8 +30,8 @@ function maxSubarray(arr) {
   }
   return maxSum;
 }
-*/
 
+/*
 function maxSubarray(arr) {
   if (arr.length == 0) {
     return 0;
@@ -57,6 +57,7 @@ function maxSubarray(arr) {
 
   return maxSum;
 }
+  */
 
 console.log('Mixed numbers:');
 let mixedNums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
