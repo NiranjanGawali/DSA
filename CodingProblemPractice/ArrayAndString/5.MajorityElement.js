@@ -11,15 +11,17 @@ This problem can be solved by usin Boyer-Moore Voting Algorithm
 */
 
 function findMajorityElement(nums) {
-  let count = 0;
   let candidate = null;
+  let count = 0;
 
-  for (const num of nums) {
+  for (let num of nums) {
     if (count === 0) {
       candidate = num;
     }
     count = count + candidate === num ? 1 : -1;
   }
+
+  return candidate;
 }
 
 let nums = [3, 2, 3];
@@ -30,3 +32,8 @@ let nums = [3, 2, 3];
 
 let result = findMajorityElement(nums);
 console.log('Result : ', result);
+
+/*
+Time complexity - O(n)
+Space complexity - O(1)
+*/
