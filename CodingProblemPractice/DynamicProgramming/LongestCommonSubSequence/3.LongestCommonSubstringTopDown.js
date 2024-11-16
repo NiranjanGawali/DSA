@@ -63,41 +63,21 @@ console.log('Result : ', result);
 // Top down approach with memoization
 
 function findLongestCommonSubstringCount(m, str1, n, str2, maxLen, memo = {}) {
-  if (m === 0 || n === 0) {
-    return maxLen;
+  let dp = Array(m + 1)
+    .fill()
+    .map(() => Array(n + 1).fill(0));
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = 1 + dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = 0;
+      }
+    }
   }
 
-  let key = `${m}:${n}`;
-
-  if (key in memo) return memo[key];
-
-  if (str1[m - 1] === str2[n - 1]) {
-    maxLen =
-      1 +
-      findLongestCommonSubstringCount(m - 1, str1, n - 1, str2, maxLen, memo);
-  } else {
-    let reduceStr1 = findLongestCommonSubstringCount(
-      m - 1,
-      str1,
-      n,
-      str2,
-      maxLen,
-      memo
-    );
-    let reduceStr2 = findLongestCommonSubstringCount(
-      m,
-      str1,
-      n - 1,
-      str2,
-      maxLen,
-      memo
-    );
-    maxLen = Math.max(maxLen, reduceStr1, reduceStr2);
-  }
-
-  memo[key] = maxLen;
-
-  return maxLen;
+  return dp[m][n];
 }
 
 let x = 'GeeksforGeeks',

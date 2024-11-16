@@ -48,7 +48,7 @@ function main(inputString, k) {
   return result.value;
 }
 
-let input = '987123';
+let input = '1234567';
 let k = 2;
 
 let finalOutput = main(input, k);

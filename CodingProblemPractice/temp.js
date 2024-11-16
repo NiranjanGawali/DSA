@@ -1,27 +1,22 @@
-function findSubarrayCountLessThanK(nums, k) {
-  let start = 0;
-  let end = 0;
-  let n = nums.length;
-  let product = 1;
-  let count = 0;
-  while (end < n) {
-    product *= nums[end];
-
-    if (product >= k) {
-      product /= nums[start];
-      start++;
-    }
-
-    count += end - start + 1;
-
-    end++;
+function removeDuplicateElements(nums) {
+  if (nums.length === 0) {
+    return [];
   }
 
-  return count;
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[i] !== nums[j]) {
+      i++;
+      nums[i] = nums[j];
+    }
+  }
+
+  let output = nums.slice(0, i + 1);
+  //   console.log('Output : ', output);
+  return output;
 }
 
-let nums = [10, 5, 2, 6],
-  k = 100;
+let nums = [1, 1, 2];
 
-let result = findSubarrayCountLessThanK(nums, k);
+let result = removeDuplicateElements(nums);
 console.log('Result : ', result);
